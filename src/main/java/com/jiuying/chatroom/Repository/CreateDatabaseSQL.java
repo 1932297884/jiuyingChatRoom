@@ -5,8 +5,8 @@ import org.apache.ibatis.annotations.Update;
 
 /**
  * @ 作者：九影
- * @ 时间：2024/4/19 1:32
- * @ 作用 :sql创建数据库
+ * @ 时间：2024/4/19 13:32
+ * @ 作用 :sql创建数据表
  */
 @Mapper
 public interface CreateDatabaseSQL {
