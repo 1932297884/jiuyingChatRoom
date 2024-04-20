@@ -23,7 +23,12 @@ public class CreateUsersController {
 
     @PostMapping("/Register")
     public Result register(@RequestParam(name="username") String username , @RequestParam(name="password") String password, @RequestParam(name = "sex") String sex){
-        Integer id = createUsersService.getMaxUserId() + 1;
+        Integer id;
+        if(createUsersService.getMaxUserId()==null){
+            id=1;
+        }else{
+            id = createUsersService.getMaxUserId() + 1;
+        }
         if (queryUsersService.queryusername(username)) {
             return Result.error("用户已存在");
         } else if (username == null || password == null) {
